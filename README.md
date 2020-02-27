@@ -29,12 +29,25 @@ The following instructions are made for Mac OS users. For Windows or Linux there
   - `:q`
   - `pyspark`
   - `sc.parallelize(range(1000)).count() ` BUG
+  - `exit()`
   
   5. Trouble Shoot
-  If pyspark  does not workn consider Install Java 8 JDk
-  - `brew cask install adoptopenjdk8` or https://www.oracle.com/java/technologies/javase-downloads.html
-  - /usr/libexec/java_home -V
-  -  /usr/libexec/java_home -v 1.8 --exec javac -version
+  - If pyspark  does not work consider Installing Java 8 JDk
+    - `brew cask install adoptopenjdk8` or https://www.oracle.com/java/technologies/javase-downloads.html
+    - `/usr/libexec/java_home -V`
+    -  copy the path for java8 and add it to JAVA_HOME in bash profile
+  - Also try : uninstalling apache and downloading it from http://spark.apache.org/downloads.html and extract it in your home, in this case it is spark-2.4.5-bin-hadoop2.7
+  - `vim ~/.bash_profile`
+  - and add the following
+    - export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home"
+    - export SPARK_HOME=~/spark-2.4.5-bin-hadoop2.7
+    - export PATH=$SPARK_HOME/bin:$PATH
+    - export PYSPARK_PYTHON=python3
+    - export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.9-src.zip:$PYTHONPATH
+    - export PYSPARK_SUBMIT_ARGS=pyspark-shell
+  - `source ~/.bash_profile`
+   
+   6. `pip install jupyter notebook`
 
 ## Vim 
 Most important commands in vi are these:
