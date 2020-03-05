@@ -2,6 +2,7 @@
 Spark and Python3 hands on project
 ## Setup
 The following instructions are made for Mac OS users. For Windows or Linux there could be some variations.
+https://sundog-education.com/spark-python/
 1. Install python 3 
   - run `brew install python`.
     - python3 will launch the Homebrew-installed Python 3 interpreter (Mac OS has python 2 by default, if we don't want to type python3 everytime we can use a version manager like `pyenv`)
