@@ -32,8 +32,8 @@ https://sundog-education.com/spark-python/
   - `sc.parallelize(range(1000)).count() ` BUG
   - `exit()`
   
-  5. Trouble Shoot
-  - If pyspark  does not work consider Installing Java 8 JDk
+  5. Trouble Shoot - Issue with Spark and MAC's Java Version
+  - If pyspark  does not work consider Installing Java 8 JDK
     - `brew cask install adoptopenjdk8` or https://www.oracle.com/java/technologies/javase-downloads.html
     - `/usr/libexec/java_home -V`
     -  copy the path for java8 and add it to JAVA_HOME in bash profile
@@ -48,7 +48,8 @@ https://sundog-education.com/spark-python/
     - export PYSPARK_SUBMIT_ARGS=pyspark-shell
   - `source ~/.bash_profile`
    
-   6. `pip install jupyter notebook`
+   6. Done! At this point we've got spark set up in the computer, running on top of a JDK in a python development environment.
+   7. `pip install jupyter notebook` 
 
 ## Vim 
 Most important commands in vi are these:
@@ -73,3 +74,11 @@ Activate the environment with source activate pyspark_env
 
 
 PySpark is a Python API to using Spark, which is a parallel and distributed engine for running big data applications
+
+## Data to mess around
+We have Movie ratings data freely available for researchers from grouplens.org (movielengs.org).
+They have over 40 million ratings in their complete dataset (which qualifies as big data). 
+At first we'll be running this just on our desktop (we'll run spark on a cluster later on) so for now, download a smaller dataset -> 100K Dataset (~5mb)
+### Movielens - Downloaded folder
+  - the u.data file is the one containing all the movie ratings
+  - u.items contains the lookup table for all the movie ids to movie names
